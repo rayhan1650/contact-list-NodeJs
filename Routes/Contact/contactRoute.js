@@ -1,7 +1,10 @@
-const contact = require("express").Router();
+const useContact = require("express").Router();
+const { getAllContact, createContact } = require("./contactController");
 
-contact.get("/", (req, res) => {
-  res.send("<h1>This is contact route</h1>");
-});
+useContact.get("/", getAllContact);
+// useContact.get("/:id");
+useContact.post("/", createContact);
+// useContact.put("/:id");
+// useContact.delete("/:id");
 
-module.exports = contact;
+module.exports = useContact;
